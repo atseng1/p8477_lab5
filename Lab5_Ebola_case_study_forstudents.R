@@ -11,7 +11,7 @@
 ## install.packages('deSolve')
 library(deSolve)
 
-EBOLA=function(t,state,parameters){
+EBOLA = function(t,state,parameters){
   with(as.list(c(state,parameters)),{
     
     # rate of change
@@ -33,8 +33,8 @@ EBOLA=function(t,state,parameters){
 ## Simulate the DRC 1995 outbreak
 ####################################################################################
 # Initial conditions:
-N=2e5; E0=H0=FF0=R0=0; I0=3; cumInci0=3; S0=N-I0;
-state=c(S=S0,E=E0,I=I0,H=H0,FF=FF0,R=R0,cumInci=cumInci0);
+N = 2e5; E0 = H0 = FF0 = R0 = 0; I0 = 3; cumInci0 = 3; S0 = N-I0;
+state = c(S=S0, E=E0, I=I0, H=H0, FF=FF0, R=R0, cumInci=cumInci0);
 
 ## parameters for the DRC 1995 outbreak (Tables 3 & 4 in Legrand et al. 2007)
 # no intervention
@@ -73,10 +73,10 @@ parmsNoCtrl=c(alpha=alpha, # incubation period: 7 days
 ####################################
 ## FIRST RUN WITHOUT CONTROL:
 ####################################
-times=1:140; # run for 20 weeks
-sim=ode(y=state,times=times,func=EBOLA,parms=parmsNoCtrl);
+times = 1:140; # run for 20 weeks
+sim = ode(y=state,times=times,func=EBOLA,parms=parmsNoCtrl);
 
-inci=sim[seq(7,nrow(sim),by=7),'cumInci']-c(0,sim[seq(7,nrow(sim)-7,by=7),'cumInci']) # get weekly incidence
+inci = sim[seq(7,nrow(sim),by = 7),'cumInci']-c(0,sim[seq(7,nrow(sim)-7,by=7),'cumInci']) # get weekly incidence
 
 par(mfrow=c(2,1),mar=c(3,3,1,1),mgp=c(1.8,.5,0),cex=1)
 plot(inci,ylab='Weekly incidence',xlab='Week',type='l',lwd=2)

@@ -62,7 +62,7 @@ for(i in 1:10){
   }
 }
 
-## nested for loop: for-loop in a for-loop
+## Nested for loop: for-loop in a for-loop
 for (i in 1:5){ 
   for (j in letters[1:3]){ 
     print(c(i,j))
@@ -77,6 +77,16 @@ for (i in 1:5){ # go through rows
   }
 }
 M
+
+
+
+##########################################
+## Repeat statement
+## repeat {
+## do something
+##  if (condition) break
+##}
+##########################################
 
 
 
