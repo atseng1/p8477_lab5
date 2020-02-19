@@ -4,33 +4,35 @@
 ##########################################
 ## If statements
 ##########################################
-# if (something is TURE){
+# if (something is TRUE){
 #   do plan-A
 # } else {
 #   do plan-B
 # }
-input=readline('please enter a number: ')
-input=as.numeric(input)
-if(input>100){
+input = readline('please enter a number: ')
+input = as.numeric(input)
+if(input > 100){
   print('the number you enter is greater than 100')
 } else {
   print('the number you enter is less or equal to 100')
 }
 
-p=runif(1) # randomly pick a number from 0 to 1
-if (p<.33) {
-  print(paste('p=',p),quote = F)
+p = runif(1) # randomly pick a number from 0 to 1
+if (p < 0.33) {
+  print(paste('p =',p),quote = F)
   print('small chance')
-} else if (p<.66) {
-  print(paste('p=',p),quote = F)
+} else if (p < 0.66) {
+  print(paste('p =',p),quote = F)
   print('medium chance')
 } else {
-  print(paste('p=',p),quote = F)
+  print(paste('p =',p),quote = F)
   print('great chance')
 }
 
+
+
 ##########################################
-## for loops
+## For loops
 ##########################################
 # EX1. Use the looping variable as a counter but the task may be linked to the looping variable 
 for(i in 1:10){
@@ -38,11 +40,11 @@ for(i in 1:10){
 }
 
 # EX2. Variables inside the loop depend on the looping variable and hence the result
-X=1:10; Y=10:1 
+X = 1:10; Y = 10:1 
 for(i in 1:10){
-  x=X[i]; # note: each time we grab a different x from the vector indexed by the looping variable
-  y=Y[i]; # note: each time we grab a different y from the vector indexed by the looping variable
-  z=x+y;  # each time z would based on the new x and y
+  x = X[i]; # note: each time we grab a different x from the vector indexed by the looping variable
+  y = Y[i]; # note: each time we grab a different y from the vector indexed by the looping variable
+  z = x+y;  # each time z would based on the new x and y
   print(paste0('step', i,': x=',x,'; y=',y,'; x+y=',z))
 }
 
@@ -50,13 +52,13 @@ for(i in 1:10){
 # use the if-else code above to pick 10 random number (p) 
 # and print the probabilities
 for(i in 1:10){
-  p=runif(1) # randomly pick a number from 0 to 1
-  if (p<.33) {
-    print(paste('p=',p,'small chance'),quote = F)
-  } else if (p<.66) {
-    print(paste('p=',p, 'medium chance'),quote = F)
+  p = runif(1) # randomly pick a number from 0 to 1
+  if (p < 0.33) {
+    print(paste('p =',p,'small chance'),quote = F)
+  } else if (p < 0.66) {
+    print(paste('p =',p, 'medium chance'),quote = F)
   } else {
-    print(paste('p=',p, 'great chance'),quote = F)
+    print(paste('p =',p, 'great chance'),quote = F)
   }
 }
 
@@ -67,30 +69,31 @@ for (i in 1:5){
   }
 }
 
-M=matrix(0,5,5) # initialize a matrix with 0
+M = matrix(0, 5, 5) # initialize a matrix with 0
 for (i in 1:5){ # go through rows
   for (j in 1:5){ # go through columns
     # fill the upper triangle with 1
-    if (i<=j) M[i,j]=1
+    if (i <= j) M[i,j] = 1
   }
 }
 M
 
+
+
 ##########################################
-## while loop
+## While loop
 ##########################################
-total=0
-while (total<10){
-  r=runif(1,0,3) # draw a random number, r, from [0,3]
-  total=total+r # add r to the total
+total = 0
+while (total < 10){
+  r = runif(1, 0, 3) # draw a random number, r, from [0,3]
+  total = total + r # add r to the total
   print(total)
 }
 
 
 
-
 ##########################################
-## combination of diff control statements
+## Combination of diff control statements
 ##########################################
 # Example:
 # ask user to enter their age, and check if the entry is valid
@@ -112,6 +115,3 @@ while (age < 0 | age >160){
     print (paste('Thanks for entering. Your age is',age))
   }
 }
-
-
-
